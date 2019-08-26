@@ -65,7 +65,7 @@ def checkout(cart, coupons)
   cart2 = apply_coupons(cart1, coupons)
   cart3 = apply_clearance(cart2)
 
-  subtotal = 0.00
+  subtotal = 0.0
   cart3.keys.each do |element|
     subtotal += (cart3[element][:price]*cart3[element][:count]).round(2)
   end
