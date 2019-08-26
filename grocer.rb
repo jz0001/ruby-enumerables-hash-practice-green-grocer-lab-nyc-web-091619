@@ -55,6 +55,6 @@ def checkout(cart, coupons)
   c_cart_coup_clear.keys.each.do |things|
     sum=((c_cart_coup_clear[things][:price]*c_cart_coup_clear[things][:count]).round(2))+sum
   end
-  sum=(sum*0.9).round(2) if sum>100
+  # sum=(sum*0.9).round(2) if sum>100
 end
     
