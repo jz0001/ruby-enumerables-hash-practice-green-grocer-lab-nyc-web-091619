@@ -52,9 +52,9 @@ def checkout(cart, coupons)
   c_cart_coup_clear = apply_clearance(c_cart_coup)
   
   sum=0
-  # c_cart_coup_clear.keys.each.do |things|
-  #   sum=((c_cart_coup_clear[things][:price]*c_cart_coup_clear[things][:count]).round(2))+sum
-  # end
+  c_cart_coup_clear.keys.each.do |thingz|
+    sum=((c_cart_coup_clear[thingz][:price]*c_cart_coup_clear[thingz][:count]).round(2))+sum
+  end
   # sum=(sum*0.9).round(2) if sum>100
 end
     
