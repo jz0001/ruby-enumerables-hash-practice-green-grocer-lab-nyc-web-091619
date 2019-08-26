@@ -45,41 +45,6 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  c_cart = {}
-  cart.map do |item|
-    if c_cart[item.keys[0]]
-      c_cart[item.keys[0]][:count] += 1
-    else
-      c_cart[item.keys[0]] = {
-        count: 1,
-        price: item.values[0][:price],
-        clearance: item.values[0][:clearance]
-      }
-    end
-  end
-  
-  coupons.each do |coupon|
-    if c_cart.keys.include? coupon[:item]
-      if c_cart[coupon[:item]][:count] >= coupon[:num]
-        new_name = "#{coupon[:item]} W/COUPON"
-        if c_cart[new_name]
-          c_cart[new_name][:count] += coupon[:num]
-        else
-          c_cart[new_name] = {
-            count: coupon[:num],
-            price: coupon[:cost]/coupon[:num],
-            clearance: c_cart[coupon[:item]][:clearance]
-          }
-        end
-        c_cart[coupon[:item]][:count] -= coupon[:num]
-      end
-    end
-  end
-  
-  c_cart.keys.each do |clear|
-    if c_cart[clear][:clearance]==true
-      c_cart[clear][:price]=(0.80*c_cart[clear][:price]).round(2)
-    end
-  end
-  
-end
+  c_cart = consolidate_cart(cart)
+  c_cart_coup = apply_coupons(c_cart, coupons)
+  c_cart_coup_clear = apply_clearance(c_cart_coup)
