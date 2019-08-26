@@ -51,7 +51,7 @@ def checkout(cart, coupons)
   c_cart_coup = apply_coupons(c_cart, coupons)
   c_cart_coup_clear = apply_clearance(c_cart_coup)
   
-  sum=0
+  sum=0.00
   c_cart_coup_clear.keys.each do |thingz|
     sum+=(c_cart_coup_clear[thingz][:price]*c_cart_coup_clear[thingz][:count]).round(2)
   end
