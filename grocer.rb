@@ -54,4 +54,5 @@ def checkout(cart, coupons)
     (c_cart_coup_clear[each][:price]*c_cart_coup_clear[each][:count]).round(2)+sum=sum
   end
   sum=(sum*0.9).round(2) if sum>100
+end
     
