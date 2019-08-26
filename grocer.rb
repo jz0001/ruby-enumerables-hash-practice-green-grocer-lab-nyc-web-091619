@@ -67,6 +67,6 @@ def checkout(cart, coupons)
   cart3.keys.each do |element|
     subtotal += (cart3[element][:price]*cart3[element][:count]).round(2)
   end
-   > 100.00 ? (total * 0.90).round : total
+   subtotal=(subtotal*0.9).round(2) if subtotal>100
 end
     
