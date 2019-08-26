@@ -47,17 +47,17 @@ end
 
 
 def checkout(cart, coupons)
-  c_cart = consolidate_cart(cart)
-  c_cart_coup = apply_coupons(c_cart, coupons)
-  c_cart_coup_clear = apply_clearance(c_cart_coup)
+  # c_cart = consolidate_cart(cart)
+  # c_cart_coup = apply_coupons(c_cart, coupons)
+  # c_cart_coup_clear = apply_clearance(c_cart_coup)
   
-  subtotal=0.00
-  c_cart_coup_clear.keys.each do |item|
-    subtotal += (c_cart_coup_clear[item][:price]*c_cart_coup_clear[item][:count]).round(2)
-  end
+  # subtotal=0.00
+  # c_cart_coup_clear.keys.each do |item|
+  #   subtotal += (c_cart_coup_clear[item][:price]*c_cart_coup_clear[item][:count]).round(2)
+  # end
   # c_cart_coup_clear.keys.each do |thingz|
   #   sum+=(c_cart_coup_clear[thingz][:price]*c_cart_coup_clear[thingz][:count]).round(2)
   # end
-  subtotal=(subtotal*0.9).round(2) if subtotal>100
+  # subtotal=(subtotal*0.9).round(2) if subtotal>100
 end
     
