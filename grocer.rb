@@ -75,4 +75,11 @@ def checkout(cart, coupons)
       end
     end
   end
+  
+  c_cart.keys.each do |clear|
+    if c_cart[clear][:clearance]==true
+      c_cart[clear][:price]=(0.80*c_cart[clear][:price]).round(2)
+    end
+  end
+  
 end
