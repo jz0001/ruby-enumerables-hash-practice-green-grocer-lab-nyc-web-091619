@@ -59,7 +59,7 @@ def checkout(cart, coupons)
   end
   
   coupons.each do |coupon|
-    if cart.keys.include? coupon[:item]
+    if c_cart.keys.include? coupon[:item]
       if c_cart[coupon[:item]][:count] >= coupon[:num]
         new_name = "#{coupon[:item]} W/COUPON"
         if c_cart[new_name]
@@ -68,7 +68,7 @@ def checkout(cart, coupons)
           c_cart[new_name] = {
             count: coupon[:num],
             price: coupon[:cost]/coupon[:num],
-            clearance: cart[coupon[:item]][:clearance]
+            clearance: c_cart[coupon[:item]][:clearance]
           }
         end
         c_cart[coupon[:item]][:count] -= coupon[:num]
