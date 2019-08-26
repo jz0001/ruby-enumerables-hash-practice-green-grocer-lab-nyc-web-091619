@@ -49,4 +49,5 @@ def checkout(cart, coupons)
   c_cart_coup = apply_coupons(c_cart, coupons)
   c_cart_coup_clear = apply_clearance(c_cart_coup)
   
-  
+  sum=0
+  c_cart_coup_clear.each.do 
