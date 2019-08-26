@@ -59,6 +59,8 @@ def checkout(cart, coupons)
   #   sum+=(c_cart_coup_clear[thingz][:price]*c_cart_coup_clear[thingz][:count]).round(2)
   # end
   # subtotal=(subtotal*0.9).round(2) if subtotal>100
+  
+  
   cart1 = consolidate_cart(cart)
   cart2 = apply_coupons(cart1, coupons)
   cart3 = apply_clearance(cart2)
@@ -67,6 +69,6 @@ def checkout(cart, coupons)
   cart3.keys.each do |element|
     subtotal += (cart3[element][:price]*cart3[element][:count]).round(2)
   end
-   subtotal=(subtotal*0.9).round(2) if subtotal>100
+  subtotal=(subtotal*0.9).round(2) if subtotal>100
 end
     
