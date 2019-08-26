@@ -14,6 +14,7 @@ def consolidate_cart(cart)
   c_cart
 end
 
+
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     if cart.keys.include? coupon[:item]
@@ -44,6 +45,7 @@ def apply_clearance(cart)
     cart
 end
 
+
 def checkout(cart, coupons)
   c_cart = consolidate_cart(cart)
   c_cart_coup = apply_coupons(c_cart, coupons)
@@ -52,6 +54,8 @@ def checkout(cart, coupons)
   sum=0
   c_cart_coup_clear.keys.each.do |each|
     (c_cart_coup_clear[each][:price]*c_cart_coup_clear[each][:count]).round(2)+sum=sum
+    
+    
   end
   sum=(sum*0.9).round(2) if sum>100
 end
