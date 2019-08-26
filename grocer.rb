@@ -36,13 +36,9 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-clear_cart={}
   cart.keys.each do |clear|
     if cart[clear][:clearance]==true
-      cart[clear][:price]=0.8*cart[clear][:price].round(2)
-      clear_cart.push(cart[clear][:price])
-    else
-      clear_cart.push(cart[clear][:price])
+      cart[clear][:price]=0.80*cart[clear][:price].round(2)
     end
   end
     clear_cart
