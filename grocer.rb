@@ -52,4 +52,6 @@ def checkout(cart, coupons)
   sum=0
   c_cart_coup_clear.keys.each.do |each|
     c_cart_coup_clear[each][:price]*c_cart_coup_clear[each][:count]+sum=sum
+  end
+  
     
